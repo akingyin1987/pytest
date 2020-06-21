@@ -47,6 +47,7 @@ def outer():
         print(b)
         a = 20
         b = 30
+
     inner()
     print("{0},{1}".format(a, b))
 
