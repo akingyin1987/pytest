@@ -1,17 +1,34 @@
 # 异常
 # -*- coding: UTF-8 -*-
+
+import traceback
+
 try:
     print("测试异常")
     a = 3 / 0
 
+    # with 关键字，上下文管理器，系统自动管理资源,主要用于处理IO ，网络等
+    with open("/Users/akingyin/Downloads/1.txt", "r") as f:
+        content = f.readline()
+        print("content={0}".format(content))
+
 except ZeroDivisionError as e:
     print("出错了,{0}".format(e))
+
+    # 将异常信息打印出来
+    traceback.print_exc()
+    # 将异常信息自动输出到指定文件
+    with open("/Users/akingyin/Downloads/1.txt", "a") as f:
+        traceback.print_exc(file=f)
+
 except ValueError as e1:
     print("异常，不能将字符串转为数字")
 except NameError:
     print("异常，变量不存在")
 except BaseException as e:
     print("底级异常", e)
+    # traceback 打印异常详情，需要导入
+    traceback.print_exc()
 else:
     print("没有进入异常，则会执行 else")
 finally:

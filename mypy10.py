@@ -22,11 +22,11 @@ class Student(Person):
     # 继承 格式： class 子类名(父类1，父类2....)
     def __init__(self, name, age, sex, score):
         # 实现父类的init方法
+        # super(Student, self).__init__(name, sex, age)
         Person.__init__(self, name, age, sex)
         self.score = score
 
     def studentInfo(self):
-
         self.say()
         # 这两个方法效果一样
         super().say()
