@@ -48,6 +48,7 @@ class Student:
     #     self.name = name
 
 
+
 s1 = Student(age=22)
 
 # idea  是不会给提示的，所以不建议用此方法使用
