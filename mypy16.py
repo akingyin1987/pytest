@@ -6,13 +6,15 @@
 
 
 def writeFileInfo():
+    global f
     try:
-        f = open(r"/Users/akingyin/Downloads/1.txt", "a")
+        f = open(r"/Users/akingyin/Downloads/1.txt", "a", encoding="utf-8")
         f.write("这是我写入的数据\n")
-        f.close()
-
+        f.flush()
     except FileNotFoundError as e:
         print(e)
+    finally:
+        f.close()
 
 
 def openReadFileInfo():
